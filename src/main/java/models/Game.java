@@ -2,6 +2,9 @@ package models;
 
 import java.util.Objects;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Game {
 	private int id;
 	private Products product;
@@ -9,6 +12,7 @@ public class Game {
 	private String Description;
 	private Double price;
 	private Double ratings;
+	
 	public Game() {
 		super();
 		// TODO Auto-generated constructor stub

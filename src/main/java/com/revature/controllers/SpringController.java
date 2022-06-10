@@ -1,4 +1,4 @@
-package controllers;
+package com.revature.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

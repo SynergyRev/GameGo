@@ -10,11 +10,11 @@
      <!-- JDBC -->
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">password</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://project-2-synergy.c298uwttvwjb.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=P2</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://project-2-synergy.c298uwttvwjb.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=p2</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <!-- Hibernate Properties -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hibernate.default_schema">P2</property> <!-- This should be the name of your schema -->
+        <property name="hibernate.default_schema">p2</property> <!-- This should be the name of your schema -->
         <!-- Hibernate console output -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
@@ -24,8 +24,8 @@
 		<!-- It will wipe all tables and data, and recreate it -->
 
         <!-- We HAVE TO map our classes here in order for them to get picked up by Hibernate-->
-        <mapping class="models.Users"/>
-        <mapping class="models.Games"/>
+        <mapping class="com.revature.models.Users"/>
+        <mapping class="com.revature.models.Game"/>
        
         
         

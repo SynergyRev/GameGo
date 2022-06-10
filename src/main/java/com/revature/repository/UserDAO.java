@@ -1,4 +1,4 @@
-package repository;
+package com.revature.repository;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import utilities.HibernateUtil;
+import com.revature.models.Users;
+import com.revature.utilities.HibernateUtil;
 
-import models.Users;
 @Repository
 public class UserDAO {
 //	private Users user;

@@ -1,4 +1,4 @@
-package controllers;
+package com.revature.controllers;
 
 public class UserController {
 

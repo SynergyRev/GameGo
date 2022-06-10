@@ -1,4 +1,4 @@
-package services;
+package com.revature.services;
 
 public class ProductServices {
 

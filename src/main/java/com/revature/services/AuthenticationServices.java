@@ -1,9 +1,9 @@
-package services;
+package com.revature.services;
 
 import java.sql.SQLException;
 
-import models.Users;
-import repository.UserDAO;
+import com.revature.models.Users;
+import com.revature.repository.UserDAO;
 
 
 public class AuthenticationServices {

@@ -2,17 +2,29 @@ package models;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 
-
 @Component
+@Entity
+@Table(name = "user")
 public class Users {
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String firstName;
 	private String lastName;
+	@Column(nullable = false, unique=true)
 	private String userName;
+	@Column(nullable = false)
 	private String password;
 	private String email;
 	private String address;
@@ -26,6 +38,16 @@ public class Users {
 			String address) {
 		super();
 		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+	}
+
+	public Users(String firstName, String lastName, String userName, String password, String email, String address) {
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.userName = userName;

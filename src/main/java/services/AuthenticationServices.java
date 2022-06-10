@@ -1,5 +1,7 @@
 package services;
 
+import java.sql.SQLException;
+
 import models.Users;
 import repository.UserDAO;
 
@@ -30,5 +32,11 @@ UserDAO userDAO = new UserDAO();
 		return 0;
 		
 	}
+	public void insertUser(Users user) {
+		userDAO.insertUser(user);
+	}
+
+
+
 
 }

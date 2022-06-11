@@ -14,7 +14,6 @@ import com.revature.models.Users;
 import com.revature.services.AuthenticationServices;
 
 @Controller
-@Repository
 @RequestMapping(value="/authcontroller")
 @CrossOrigin
 public class AuthController {

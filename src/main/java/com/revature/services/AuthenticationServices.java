@@ -2,10 +2,12 @@ package com.revature.services;
 
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Service;
+
 import com.revature.models.Users;
 import com.revature.repository.UserDAO;
 
-
+@Service
 public class AuthenticationServices {
 	
 UserDAO userDAO = new UserDAO();

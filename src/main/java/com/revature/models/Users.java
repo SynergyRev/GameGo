@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -28,7 +30,27 @@ public class Users {
 	private String password;
 	private String email;
 	private String address;
+	private List<Product> product;
+	public Users(String firstName, String lastName, String userName, String password, String email, String address,
+			List<Product> product) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+		this.product = product;
+	}
 	
+	public List<Product> getProduct() {
+		return product;
+	}
+	
+	public void setProduct(List<Product> product) {
+		this.product = product;
+	}
+
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -114,7 +136,7 @@ public class Users {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, email, firstName, id, lastName, password, userName);
+		return Objects.hash(address, email, firstName, id, lastName, password, product, userName);
 	}
 
 	@Override
@@ -129,7 +151,7 @@ public class Users {
 		return Objects.equals(address, other.address) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
-				&& Objects.equals(userName, other.userName);
+				&& Objects.equals(product, other.product) && Objects.equals(userName, other.userName);
 	}
 
 	@Override

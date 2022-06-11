@@ -28,18 +28,18 @@ public class ProductDAO {
 	//We are going to use HQL for this one
 		public static List<Product> getAllProducts(){
 			Session ses = HibernateUtil.getSession(); //This opens the session
-			List<Product> userList = ses.createQuery("FROM Products").list(); //This is HQL which will get all items from the user Table
+			List<Product> userList = ses.createQuery("FROM product").list(); //This is HQL which will get all items from the user Table
 			HibernateUtil.closeSession(); //This closes the session
 			return userList; //This returns the list
 		}
 		
-		public Product getProductById(int id) {
+		public static Product getProductById(int id) {
 			Session ses = HibernateUtil.getSession(); //opens the session
 			Product product = ses.get(Product.class, id); //This will select all users by ID (This should result in only one user, but id is a PK which is unique)
 			HibernateUtil.closeSession(); //closes the session
 			return product; //returns the user
 		}
-		public Product getByProductName(String name) {
+		public static Product getByProductName(String name) {
 			Session ses = HibernateUtil.getSession(); //This opens the session
 			Product product = ses.get(Product.class, name);
 			HibernateUtil.closeSession();

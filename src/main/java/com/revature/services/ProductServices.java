@@ -28,17 +28,19 @@ public class ProductServices {
 
 
 
-
+public static List<Product> getAllProducts(){
+	return ProductDAO.getAllProducts();
+}
 
 public static Product getProductById(int id) {
-	return pd.getProductById(id);	
+	return ProductDAO.getProductById(id);	
 }
 
 public List<Product> getAllUsers() {
 	return ProductDAO.getAllProducts();
 }
 public static Product getByProductName(String name) {
-	return pd.getByProductName(name);
+	return ProductDAO.getByProductName(name);
 }
 public static void insertProduct(Product product) {
 	 ProductDAO.insertProduct(product);

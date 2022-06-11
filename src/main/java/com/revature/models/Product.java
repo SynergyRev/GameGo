@@ -5,19 +5,19 @@ import java.util.Objects;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Game {
+public class Product {
 	private int id;
-	private Products product;
+	private Categories product;
 	private String gName;
 	private String Description;
 	private Double price;
 	
 	
-	public Game() {
+	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Game(int id, Products product, String gName, String description, Double price) {
+	public Product(int id, Categories product, String gName, String description, Double price) {
 		super();
 		this.id = id;
 		this.product = product;
@@ -26,16 +26,23 @@ public class Game {
 		this.price = price;
 		
 	}
+	public Product(Categories product, String gName, String description, Double price) {
+		super();
+		this.product = product;
+		this.gName = gName;
+		Description = description;
+		this.price = price;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Products getProduct() {
+	public Categories getProduct() {
 		return product;
 	}
-	public void setProduct(Products product) {
+	public void setProduct(Categories product) {
 		this.product = product;
 	}
 	public String getgName() {
@@ -71,7 +78,7 @@ public class Game {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Game other = (Game) obj;
+		Product other = (Product) obj;
 		return Objects.equals(Description, other.Description) && Objects.equals(gName, other.gName) && id == other.id
 				&& Objects.equals(price, other.price) && product == other.product;
 	}

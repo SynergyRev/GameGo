@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public enum Products {
+public enum Categories {
 	Console,Games,HeadSets,Controllers;
 
 }

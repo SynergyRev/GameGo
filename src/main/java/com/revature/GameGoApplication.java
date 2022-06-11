@@ -14,13 +14,13 @@ public class GameGoApplication {
 
 	public static void main(String[] args) {
 		
-		try(Session ses = HibernateUtil.getSession()){
-			System.out.println("Connection Successful");
-		}
-		catch (HibernateException e) {
-			System.out.println("Connection Failed");
-			e.printStackTrace();
-		}
+//		try(Session ses = HibernateUtil.getSession()){
+//			System.out.println("Connection Successful");
+//		}
+//		catch (HibernateException e) {
+//			System.out.println("Connection Failed");
+//			e.printStackTrace();
+//		}
 		SpringApplication.run(GameGoApplication.class, args);
 		System.out.println("Hello");
 		

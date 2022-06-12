@@ -11,6 +11,7 @@ import com.revature.controllers.ProductController;
 import com.revature.models.Categories;
 import com.revature.models.Product;
 import com.revature.models.Users;
+import com.revature.repository.ProductDAO;
 import com.revature.repository.UserDAO;
 import com.revature.services.ProductServices;
 import com.revature.utilities.HibernateUtil;
@@ -31,8 +32,6 @@ public class GameGoApplication {
 			//UserDAO ud = new UserDAO();
 			//Users u1 = new Users("Momo", "Traore", "MomoT1", "password","momotraore@yahoo.com", "New York");
 			//ud.insertUser(u1);
-			List <Product> p = ProductServices.getAllProducts();
-			System.out.println(p);
 			
 		}
 		catch (HibernateException e) {
@@ -40,6 +39,7 @@ public class GameGoApplication {
 			e.printStackTrace();
 		}
 		SpringApplication.run(GameGoApplication.class, args);
+		
 		System.out.println("Hello");
 		
 		

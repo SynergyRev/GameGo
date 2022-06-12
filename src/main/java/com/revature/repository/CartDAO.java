@@ -47,5 +47,8 @@ public class CartDAO {
 				e.printStackTrace();
 			}
 	}
+	public void insertUserProduct() {
+		
+	}
 	
 }

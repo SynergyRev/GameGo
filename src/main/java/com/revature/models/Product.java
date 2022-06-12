@@ -18,6 +18,7 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private Categories product;
 	@Column(nullable = false, unique=true)
 	private String gName;

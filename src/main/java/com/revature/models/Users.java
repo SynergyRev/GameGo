@@ -30,6 +30,7 @@ public class Users {
 	private String password;
 	private String email;
 	private String address;
+	
 	private List<Product> product;
 	public Users(String firstName, String lastName, String userName, String password, String email, String address,
 			List<Product> product) {

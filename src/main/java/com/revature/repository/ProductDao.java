@@ -2,6 +2,7 @@ package com.revature.repository;
 
 import java.util.List;
 
+
 import javax.persistence.PersistenceContext;
 
 import org.hibernate.HibernateException;
@@ -10,7 +11,7 @@ import org.hibernate.Session;
 import com.revature.models.Product;
 import com.revature.utilities.HibernateUtil;
 
-public class ProductDAO {
+public class ProductDao {
 	@PersistenceContext
 	public static void insertProduct(Product product) {
 		try (Session ses = HibernateUtil.getSession()){

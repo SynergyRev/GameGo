@@ -10,12 +10,12 @@ import com.revature.models.Users;
 import com.revature.repository.UserDAO;
 
 @Service
-public class UserServices {
+public class UserService {
 	
 	
 	private static UserDAO ud;
 	@Autowired
-	public UserServices(UserDAO user) {
+	public UserService(UserDAO user) {
 		this.ud=  user; 
 				
 	}

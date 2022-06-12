@@ -1,6 +1,7 @@
 package com.revature;
 
 import org.hibernate.HibernateException;
+
 import org.hibernate.Session;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,7 +26,7 @@ public class GameGoApplication {
 		System.out.println("Hello");
 		
 		
-		
+//		
 //	UserDAO ud = new UserDAO();
 //
 //	Users u1 = new Users("Momo", "Traore", "MomoT1", "password","momotraore@yahoo.com", "New York");

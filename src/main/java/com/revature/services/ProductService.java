@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.models.Product;
-import com.revature.repository.ProductDAO;
+import com.revature.repository.ProductDao;
 
 @Service
-public class ProductServices {
-	private static ProductDAO pd;
+public class ProductService {
+	private static ProductDao pd;
 
 	@Autowired
-	public ProductServices() {
+	public ProductService() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -28,13 +28,13 @@ public static Product getProductById(int id) {
 }
 
 public List<Product> getAllUsers() {
-	return ProductDAO.getAllProducts();
+	return ProductDao.getAllProducts();
 }
 public static Product getByProductName(String name) {
 	return pd.getByProductName(name);
 }
 public static void insertProduct(Product product) {
-	 ProductDAO.insertProduct(product);
+	 ProductDao.insertProduct(product);
 	
 }
 

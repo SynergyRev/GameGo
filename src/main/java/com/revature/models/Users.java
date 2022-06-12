@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -28,7 +29,21 @@ public class Users {
 	private String password;
 	private String email;
 	private String address;
+	private List<Product> product;
 	
+	
+	public Users(String firstName, String lastName, String userName, String password, String email, String address,
+			List<Product> product) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+		this.product = product;
+	}
+
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -110,6 +125,13 @@ public class Users {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public List<Product> getProduct() {
+		return product;
+	}
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
 	}
 
 	@Override

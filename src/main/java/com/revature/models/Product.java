@@ -2,14 +2,27 @@ package com.revature.models;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
+@Table(name = "Product")
 public class Product {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private Categories product;
+	@Column(nullable = false, unique=true)
 	private String gName;
 	private String Description;
+	@Column(nullable = false)
 	private Double price;
 	
 	

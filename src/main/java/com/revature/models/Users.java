@@ -173,7 +173,7 @@ public class Users {
 		return Objects.equals(address, other.address) && Objects.equals(cart, other.cart)
 				&& Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
-				&& Objects.equals(product, other.product) && Objects.equals(userName, other.userName);
+				&& Objects.equals(userName, other.userName);
 	}
 
 	@Override

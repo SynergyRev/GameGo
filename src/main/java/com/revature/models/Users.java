@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -30,7 +31,8 @@ public class Users {
 	private String password;
 	private String email;
 	private String address;
-	
+	@OneToOne
+	private Cart cart;
 	private List<Product> product;
 	public Users(String firstName, String lastName, String userName, String password, String email, String address,
 			List<Product> product) {

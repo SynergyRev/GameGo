@@ -1,5 +1,6 @@
 package com.revature.models;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	Product product;
+	List<Product> product;
 	Users user;
 	public int getId() {
 		return id;
@@ -24,10 +25,10 @@ public class Cart {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Product getProduct() {
+	public List<Product> getProduct() {
 		return product;
 	}
-	public void setProduct(Product product) {
+	public void setProduct(List<Product> product) {
 		this.product = product;
 	}
 	public Users getUser() {
@@ -36,7 +37,7 @@ public class Cart {
 	public void setUser(Users user) {
 		this.user = user;
 	}
-	public Cart(Product product, Users user) {
+	public Cart(List<Product> product, Users user) {
 		super();
 		this.product = product;
 		this.user = user;

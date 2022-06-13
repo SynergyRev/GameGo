@@ -33,7 +33,7 @@ public class Users {
 	private String address;
 	@OneToOne
 	private Cart cart;
-	private List<Product> product;
+	
 	public Users(String firstName, String lastName, String userName, String password, String email, String address,
 			List<Product> product) {
 		super();
@@ -43,15 +43,15 @@ public class Users {
 		this.password = password;
 		this.email = email;
 		this.address = address;
-		this.product = product;
+		this.cart = cart;
 	}
 	
-	public List<Product> getProduct() {
-		return product;
+	public Cart getCart() {
+		return cart;
 	}
 	
-	public void setProduct(List<Product> product) {
-		this.product = product;
+	public void setProduct(Cart cart) {
+		this.cart = cart;
 	}
 
 	public Users() {
@@ -139,7 +139,7 @@ public class Users {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, email, firstName, id, lastName, password, product, userName);
+		return Objects.hash(address, email, firstName, id, lastName, password, cart, userName);
 	}
 
 	@Override
@@ -154,7 +154,7 @@ public class Users {
 		return Objects.equals(address, other.address) && Objects.equals(email, other.email)
 				&& Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
-				&& Objects.equals(product, other.product) && Objects.equals(userName, other.userName);
+				&& Objects.equals(cart, other.cart) && Objects.equals(userName, other.userName);
 	}
 
 	@Override

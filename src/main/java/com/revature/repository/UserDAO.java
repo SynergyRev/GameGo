@@ -3,8 +3,10 @@ package com.revature.repository;
 import java.util.List;
 
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
+
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,11 +16,7 @@ import com.revature.utilities.HibernateUtil;
 
 @Repository
 public class UserDAO {
-//	private Users user;
-//	@Autowired
-//	public UserDAO(Users user) {
-//		this.user =user;
-//	}
+//	 
 	
 	@PersistenceContext
 	public int insertUser(Users user) {
@@ -48,12 +46,23 @@ public class UserDAO {
 		HibernateUtil.closeSession(); //closes the session
 		return user; //returns the user
 	}
-	public Users getByUserName(String userName) {
+	public static Users getByUserName(String userName) {
 		Session ses = HibernateUtil.getSession(); //This opens the session
-		Users user = ses.get(Users.class, userName);
-		HibernateUtil.closeSession();
+	
+		Query q = ses.createQuery("FROM Users WHERE username = ?1");
+		q.setParameter(1,userName);
+		try {
+			List<Users> userList = q.getResultList();
+			HibernateUtil.closeSession();
+			Users u = userList.get(0);
+			System.out.println("user exist");
+			return u;
+		} catch(Exception e) {
+			return null;
+		}
 		
-		return user;
+		
+	
 		
 	}
 	

@@ -12,18 +12,18 @@ public class AuthenticationServices {
 	
 UserDAO userDAO = new UserDAO();
 	
-	public  int login(String username, String password) {
-		Users user;
+	public  Users login(String username, String password) {
+		 Users user = new Users();
 		try {
-			user = userDAO.getByUserName(username);
+			user = UserDAO.getByUserName(username);
 			if(user != null && password.equals(user.getPassword())) {
 				
 				System.out.println("Logged In Successfully");
-				return 1;
+				return user;
 				
 			} else {	
 				System.out.println("User Does Not Exist!");
-				return 0;
+				return user;
 			}
 		}catch(Exception e) {
 			System.out.println("Login Unsuccessful");
@@ -31,7 +31,7 @@ UserDAO userDAO = new UserDAO();
 		}
 		
 		// If the try-catch does not run, a null object is return and login is deemed unsuccessful
-		return 0;
+		return user;
 		
 	}
 	public void insertUser(Users user) {

@@ -6,15 +6,15 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
+import com.revature.models.Cart;
 import com.revature.models.Product;
-import com.revature.models.Users;
+
 import com.revature.utilities.HibernateUtil;
 
 public class CartDAO {
-
-	public static List<Product> getAllUserProducts(Users user){
+	public static List<Product> getAllUserProducts(Cart cart){
 		Session ses = HibernateUtil.getSession(); 
-		List<Product> products = user.getProduct();
+		List<Product> products = cart.getProduct();
 		HibernateUtil.closeSession(); 
 		return products; 
 	}
@@ -22,12 +22,12 @@ public class CartDAO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public void  removeUserItems(Users user, int index){
+	public void  removeUserItems(Cart cart, int index){
 		try (Session ses = HibernateUtil.getSession()){
-			List<Product> products  = getAllUserProducts(user);
+			List<Product> products  = getAllUserProducts(cart);
 			products = new ArrayList<Product>();
 			products.remove(index);
-			ses.save(user);
+			ses.save(cart);
 			HibernateUtil.closeSession(); //This closes the session which will help prevent a memory leak issue
 			
 			}catch(HibernateException e) {
@@ -35,11 +35,11 @@ public class CartDAO {
 				e.printStackTrace();
 			}
 	}
-	public void clearAllItems(Users user) {
+	public void clearAllItems(Cart cart) {
 		try (Session ses = HibernateUtil.getSession()){
-			getAllUserProducts(user).clear();
+			getAllUserProducts(cart).clear();
 			
-			ses.save(user);
+			ses.save(cart);
 			HibernateUtil.closeSession(); //This closes the session which will help prevent a memory leak issue
 			
 			}catch(HibernateException e) {
@@ -47,5 +47,4 @@ public class CartDAO {
 				e.printStackTrace();
 			}
 	}
-	
 }

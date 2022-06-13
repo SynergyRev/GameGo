@@ -3,6 +3,7 @@ package com.revature;
 import java.util.List;
 
 import org.hibernate.HibernateException;
+
 import org.hibernate.Session;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -43,8 +44,8 @@ public class GameGoApplication {
 		System.out.println("Hello");
 		
 		
-		
-	
+//		
+//	UserDAO ud = new UserDAO();
 //
 	
 

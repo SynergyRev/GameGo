@@ -2,6 +2,8 @@ package com.revature.repository;
 
 import java.util.List;
 
+import javax.persistence.PersistenceContext;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class UserDAO {
 //		this.user =user;
 //	}
 	
-
+	@PersistenceContext
 	public int insertUser(Users user) {
 		try (Session ses = HibernateUtil.getSession()){
 		ses.save(user);
@@ -54,7 +56,7 @@ public class UserDAO {
 		return user;
 		
 	}
-
+	
 
 
 

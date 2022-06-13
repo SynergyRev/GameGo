@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -30,9 +31,46 @@ public class Users {
 	private String password;
 	private String email;
 	private String address;
+	@OneToOne
+	private Cart cart;
+	
+	
 	
 	
 
+
+	public Users(int id, String firstName, String lastName, String userName, String password, String email,
+			String address, Cart cart) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+		this.cart = cart;
+	}
+
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+	public Users(String firstName, String lastName, String userName, String password, String email, String address,
+			Cart cart) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+		this.cart = cart;
+	}
 
 	public Users() {
 		super();
@@ -120,7 +158,7 @@ public class Users {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(address, email, firstName, id, lastName, password, userName);
+		return Objects.hash(address, cart, email, firstName, id, lastName, password, userName);
 	}
 
 	@Override
@@ -132,8 +170,8 @@ public class Users {
 		if (getClass() != obj.getClass())
 			return false;
 		Users other = (Users) obj;
-		return Objects.equals(address, other.address) && Objects.equals(email, other.email)
-				&& Objects.equals(firstName, other.firstName) && id == other.id
+		return Objects.equals(address, other.address) && Objects.equals(cart, other.cart)
+				&& Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(password, other.password)
 				&& Objects.equals(userName, other.userName);
 	}
@@ -141,7 +179,7 @@ public class Users {
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName
-				+ ", password=" + password + ", email=" + email + ", address=" + address + "]";
+				+ ", password=" + password + ", email=" + email + ", address=" + address + ", cart=" + cart + "]";
 	}
 	
 }

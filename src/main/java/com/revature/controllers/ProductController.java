@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.revature.models.Product;
-import com.revature.services.ProductService;
+import com.revature.services.ProductServices;
 
 @Controller
 @RequestMapping(value="/productcontroller")
 @CrossOrigin
 public class ProductController {
-	private ProductService ps;
-	public ProductController(ProductService product) {
+	private ProductServices ps;
+	public ProductController(ProductServices product) {
 		ps = product;
 	}
 	@PostMapping
@@ -26,7 +26,7 @@ public class ProductController {
 		if(product.getgName() == null) {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
 		}else {
-			ProductService.insertProduct(product);
+			ProductServices.insertProduct(product);
 			return ResponseEntity.status(HttpStatus.CREATED).body(product);
 		}
 		

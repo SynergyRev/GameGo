@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -20,6 +22,7 @@ public class OrderHistory {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orderId;
 	private Users user;
+	@ManyToOne()
 	private Product product;
 	
 	

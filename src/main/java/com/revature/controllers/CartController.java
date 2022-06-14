@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.revature.models.OrderHistory;
 import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.repository.CartDAO;
@@ -48,5 +49,15 @@ public class CartController {
 			return ResponseEntity.status(HttpStatus.OK).body(product);
 		}	
 	
-}
+	}
+
+	@PostMapping("/checkout")
+	public static ResponseEntity<String> checkout(@RequestBody int productId, int userId ){
+		if((productId !=0) && (userId !=0)) {
+		return ResponseEntity.status(HttpStatus.OK).body("Checkout complete");
+		}
+			
+		return null;
+		
+	}
 }

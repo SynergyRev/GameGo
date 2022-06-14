@@ -26,7 +26,7 @@
         <!-- We HAVE TO map our classes here in order for them to get picked up by Hibernate-->
         <mapping class="com.revature.models.Users"/>
         <mapping class="com.revature.models.Product"/>
-        <!--<mapping class ="com.revature.models.OrderHistory"/>-->
+        <mapping class ="com.revature.models.OrderHistory"/>
         
         
 

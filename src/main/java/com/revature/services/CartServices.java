@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.repository.CartDAO;
+import com.revature.repository.CheckoutDAO;
 import com.revature.repository.ProductDAO;
 
 public class CartServices {
@@ -31,6 +32,8 @@ public class CartServices {
 	public void insertProduct(Product product) {
 		cd.insertUserItem(product);
 	}
+	
+	
 	public CartServices() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -44,5 +47,9 @@ public class CartServices {
 		else {
 			return cartList;
 		}
+	}
+	
+	public void CheckoutDAO(int userId, int productId) {
+		cd.checkout(cartList, userId, productId);
 	}
 }

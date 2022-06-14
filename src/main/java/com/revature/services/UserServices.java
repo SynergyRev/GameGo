@@ -29,7 +29,7 @@ public List<Users> getAllUsers() {
 	return UserDAO.getAllUsers();
 }
 public static Users getByUsersName(String userName) {
-	return ud.getByUserName(userName);
+	return UserDAO.getByUserName(userName);
 }
 }
 

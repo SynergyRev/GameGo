@@ -24,23 +24,20 @@ public class OrderHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orderId;
-
-	@ManyToOne
-	@JoinColumn(name = "user_id")
 	private int userId;
-	
-	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private int  productId;
-	
-
-	
-	
-	
-	
+	private int productId;
+	public OrderHistory() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public OrderHistory(int orderId, int userId, int productId) {
 		super();
 		this.orderId = orderId;
+		this.userId = userId;
+		this.productId = productId;
+	}
+	public OrderHistory( int userId, int productId) {
+		super();
 		this.userId = userId;
 		this.productId = productId;
 	}
@@ -50,9 +47,6 @@ public class OrderHistory {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	
-	
-	
 	public int getUserId() {
 		return userId;
 	}
@@ -84,13 +78,4 @@ public class OrderHistory {
 	public String toString() {
 		return "OrderHistory [orderId=" + orderId + ", userId=" + userId + ", productId=" + productId + "]";
 	}
-	
-	
-
-
-
-	
-	
-	
-
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.revature.models.OrderHistory;
 import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.repository.CartDAO;
@@ -15,22 +16,27 @@ public class CartServices {
 	private static CartDAO cd;
 	ArrayList<Product> cartList = new ArrayList<Product>();
 	private static ProductDAO pd;
+	private static UserServices us;
 	public CartServices(CartDAO cart) {
 		this.cd= cart; 
 				
 	}
 	public List<Product> getAllUserProducts() {
-		 
-		return CartDAO.getAllUserProducts();
+	
+		 cartList = cd.getAllUserProducts();
+		return cartList;
 	}
 	public void clearAllItems() {
 		cd.clearAllItems();
 	}
-	public void removeUserItems( int index) {
-		cd.removeUserItems(index);;
+	public List<Product> removeUserItems( int index) {
+		cartList = cd.removeUserItems(index);
+		return cartList;
 	}
-	public void insertProduct(Product product) {
-		cd.insertUserItem(product);
+	public List<Product> insertProduct(Product product) {
+		
+		cartList = cd.insertUserItem(product);
+		return cartList;
 	}
 	
 	
@@ -38,18 +44,22 @@ public class CartServices {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ArrayList<Product> addingToCart(Product p){
+	public ArrayList<Product> addingToCart(Product p,ArrayList<Product> products){
 		if (pd.getByProductName(p.getgName()) != null) {
 		cartList.add(p);
 		System.out.println(cartList);
 		return cartList;
 		}
 		else {
-			return cartList;
+			return null;
 		}
 	}
-	
-	public void CheckoutDAO(int userId, int productId) {
-		cd.checkout(cartList, userId, productId);
+	public double checkout(int userid, ArrayList<Product> p) {
+		
+		Users user =us.getUserById(userid);
+		return CartDAO.checkout(user.getId(),p);
+	}
+	public List<OrderHistory> getOrderHistory(int userId){
+		return CartDAO.getOrderbyUserID(userId);
 	}
 }

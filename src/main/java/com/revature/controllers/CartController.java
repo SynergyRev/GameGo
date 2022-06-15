@@ -28,7 +28,7 @@ public class CartController {
 	static ArrayList<Product> p = new ArrayList<Product>();
 	@GetMapping("/getallcartitems")
 	public ResponseEntity<List<Product>> getAllCartItems(){
-		//List<Product> products = cs.getAllUserProducts();
+	//	List<Product> products = cs.getAllUserProducts();
 		 ResponseEntity.status(HttpStatus.CREATED).body(p);
 		 return ResponseEntity.status(200).body(p);
 }
@@ -40,24 +40,65 @@ public class CartController {
 			System.out.println("--------------------------------");
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 			
-		}else {
-			
-			
+		}else {	
 		Product product =	ps.getProductById(id);
 		System.out.print(product);
-			p = cs.addingToCart(product);
+			p.add(product);
+			p = cs.addingToCart(product,p);
 			return ResponseEntity.status(HttpStatus.OK).body(product);
-		}	
-	
-	}
-
-	@PostMapping("/checkout")
-	public static ResponseEntity<String> checkout(@RequestBody int productId, int userId ){
-		if((productId !=0) && (userId !=0)) {
-		return ResponseEntity.status(HttpStatus.OK).body("Checkout complete");
 		}
-			
-		return null;
-		
 	}
+		@PostMapping("/removeproducttocart")
+		public static ResponseEntity<List<Product>> removeProduct(@RequestBody int id){
+			//System.out.println(product.getId());
+		
+			if(id == 0) {
+				System.out.println("--------------------------------");
+				return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+				
+			}else {	
+			
+				p.remove(id);
+				return ResponseEntity.status(HttpStatus.OK).body(p);
+			}
+}
+	@PostMapping("/checkout")
+	public static ResponseEntity<Double> checkout(@RequestBody int userid){
+		//System.out.println(product.getId());
+	
+		if(userid == 0) {
+			System.out.println("--------------------------------");
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+			
+		}else {	
+
+			double total = cs.checkout(userid, p);
+			return ResponseEntity.status(HttpStatus.OK).body(total);
+		}
+}	
+	@PostMapping("/getOrderHistory")
+	public static ResponseEntity<List<OrderHistory>> getOrderHisoty(@RequestBody int userid){
+		//System.out.println(product.getId());
+	
+		if(userid == 0) {
+			System.out.println("--------------------------------");
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+			
+		}else {	
+
+			List<OrderHistory> oh = cs.getOrderHistory(userid);
+			return ResponseEntity.status(HttpStatus.OK).body(oh);
+		}
+}
+	
+
+	// @PostMapping("/checkout")
+	// public static ResponseEntity<String> checkout(@RequestBody int productId, int userId ){
+	// 	if((productId !=0) && (userId !=0)) {
+	// 	return ResponseEntity.status(HttpStatus.OK).body("Checkout complete");
+	// 	}
+			
+	// 	return null;
+		
+	// }
 }

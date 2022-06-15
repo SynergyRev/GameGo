@@ -9,6 +9,7 @@ import com.revature.models.OrderHistory;
 import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.repository.CartDAO;
+import com.revature.repository.CheckoutDAO;
 import com.revature.repository.ProductDAO;
 
 public class CartServices {
@@ -37,6 +38,8 @@ public class CartServices {
 		cartList = cd.insertUserItem(product);
 		return cartList;
 	}
+	
+	
 	public CartServices() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -90,4 +90,15 @@ public class CartController {
 			return ResponseEntity.status(HttpStatus.OK).body(oh);
 		}
 }
+	
+
+	// @PostMapping("/checkout")
+	// public static ResponseEntity<String> checkout(@RequestBody int productId, int userId ){
+	// 	if((productId !=0) && (userId !=0)) {
+	// 	return ResponseEntity.status(HttpStatus.OK).body("Checkout complete");
+	// 	}
+			
+	// 	return null;
+		
+	// }
 }

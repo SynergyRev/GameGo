@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.revature.models.Categories;
 import com.revature.models.Product;
 import com.revature.models.Users;
 import com.revature.services.ProductServices;
@@ -22,13 +23,38 @@ public class ProductController {
 	public ProductController(ProductServices product) {
 		ps = product;
 	}
-	@PostMapping("/insertProduct ")
-	public static ResponseEntity<Product> insertProduct(@RequestBody Product product){
+	@PostMapping("/insertProductConsole")
+	public static ResponseEntity<Product> insertProductConsole(@RequestBody Product product){
 		System.out.println(product.getId());
 		
 		if(product.getgName() == null) {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
 		}else {
+			product.setProduct(Categories.Console);
+			ProductServices.insertProduct(product);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
+		}	
+	}
+	@PostMapping("/insertProductControllers")
+	public static ResponseEntity<Product> insertProductController(@RequestBody Product product){
+		System.out.println(product.getId());
+		
+		if(product.getgName() == null) {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
+		}else {
+			product.setProduct(Categories.Controllers);
+			ProductServices.insertProduct(product);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
+		}	
+	}
+	@PostMapping(" ")
+	public static ResponseEntity<Product> insertProductGames(@RequestBody Product product){
+		System.out.println(product.getId());
+		
+		if(product.getgName() == null) {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
+		}else {
+			product.setProduct(Categories.Games);
 			ProductServices.insertProduct(product);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
 		}	
@@ -41,3 +67,4 @@ public class ProductController {
 		 return ResponseEntity.status(200).body(p);
 	}
 }
+

@@ -1,8 +1,12 @@
 export class User {
     id!: number;
-    name!: string;
-    type!: string;  
+    fName!: string;
+    lName!: string;
+    userName!: string;
     password!: string;
+    email!: string;
+    Address!:string;  
+    
   }
 
 // This is where we link up our backend

@@ -1,15 +1,25 @@
 <h1>Add User</h1>
-<!-- <form #recievedUser="ngForm">
+<form #recievedUser="ngForm">
 
-  <label for="name">Name</label>
-  <input type="text" class="form-control" id="name" placeholder="user name" [(ngModel)]="user.name" name="name">
+  <label for="name">firstName</label>
+  <input type="text" class="form-control" id="fName" placeholder="user fname" [(ngModel)]="user.fName" name="fname">
+  
+  <label for="name">lastName</label>
+  <input type="text" class="form-control" id="lNname" placeholder="user lname" [(ngModel)]="user.lName" name="lname">
+  
 
-  <label for="type">Type</label>
-  <input type="text" class="form-control" id="type" placeholder="type name" [(ngModel)]="user.type" name="name">
+  <label for="type">username</label>
+  <input type="text" class="form-control" id="type" placeholder="type name" [(ngModel)]="user.userName" name="name">
 
   <label for="password">Password</label>
   <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="user.password" name="password">
 
+  <label for="email">Email</label>
+  <input type="email" class="form-control" id="email" placeholder="email" [(ngModel)]="user.email" name="email">
+
+  <label for="address">Address</label>
+  <input type="address" class="form-control" id="address" placeholder="address" [(ngModel)]="user.address" name="password">
+
    <br>
   <button type="button" class="btn btn-success" (click)="addUser()">Save</button>
-</form> -->
+</form>

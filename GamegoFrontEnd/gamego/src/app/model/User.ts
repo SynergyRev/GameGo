@@ -5,7 +5,7 @@ export class User {
     userName!: string;
     password!: string;
     email!: string;
-    Address!:string;  
+    address!:string;  
     
   }
 

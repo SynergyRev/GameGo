@@ -5,9 +5,9 @@
     <table class="table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>fName</th>
-          <th>lName</th>
+          <th>id</th>
+          <th>firstname</th>
+          <th>lastname</th>
           <th>username</th>
           <th>password</th>
           <th>email</th>
@@ -18,8 +18,14 @@
       <tbody>
         <tr *ngFor="let user of users">
           <td>{{user.id}}</td>
-          <td>{{user.lName}}</td>
-          
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.userName}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.address}}</td>
+
+
           <td><button type="button" class="btn btn-primary" (click)="viewUser(user.id)">Show Details</button></td>
         </tr>
       </tbody>

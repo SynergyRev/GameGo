@@ -16,8 +16,8 @@ export class AdduserComponent implements OnInit {
   @Output()
   userAddedEvent = new EventEmitter();
 
-  //message: string;
-  //password: string;
+  message!: string;
+  password!: string;
 
 
   constructor(private httpClientService: HttpClientService,

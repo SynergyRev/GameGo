@@ -18,7 +18,7 @@ export class HttpClientService {
     }
 
     addUser(newUser: User) {
-      return this.httpClient.post<User>('http://localhost:3000/gamego/authcontroller//register', newUser);   
+      return this.httpClient.post<User>('http://localhost:3000/gamego/authcontroller', newUser);   
     }
 
     addGame(newGame: Game){

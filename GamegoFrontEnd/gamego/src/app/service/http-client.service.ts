@@ -21,9 +21,18 @@ export class HttpClientService {
       return this.httpClient.post<User>('http://localhost:3000/gamego/authcontroller', newUser);   
     }
 
-    addGame(newGame: Game){
-      return this.httpClient.post<Game>('http://localhost:3000/gamego/productcontroller/insertProductConsole',newGame );
+    addGame(newGame: Game) {
+      console.log("add game");
+      return this.httpClient.post<Game>('http://localhost:3000/gamego/productcontroller/insertProductGame', newGame);
     }
+
+    // addGame(newGame: Game){
+    //   return this.httpClient.post<Game>('http://localhost:3000/gamego/productcontroller/insertProductGame',newGame );
+    // }
+    getGames() {
+      return this.httpClient.get<Game[]>('http://localhost:3000/gamego/productcontroller/getAllGames');
+    }
+  
 
 
   }

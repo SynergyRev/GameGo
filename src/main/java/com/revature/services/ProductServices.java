@@ -18,16 +18,17 @@ public class ProductServices {
 	public ProductServices() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
+	}	
 //	public ProductServices(Product product) {
 //		pd.getByProductName(product.getgName());
 //				
 //	}
 	
+	public static List<Product> getAllGames(){
+		return ProductDAO.getAllGames();
+	}
+
 	
-
-
-
 public static List<Product> getAllProducts(){
 	return ProductDAO.getAllProducts();
 }

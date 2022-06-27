@@ -1,0 +1,36 @@
+<h1>Games Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addGame()">Add New Game</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Game Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let game of games">
+          <td>{{game.id}}</td>
+          <td>{{game.product}}</td>
+          <td>{{game.gName}}</td>
+          <td>{{game.Description}}</td>
+          <td>{{game.price}}</td>
+          <td>
+            <button type="button" class="btn btn-primary">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-games *ngIf="action === 'add'" [game]="selectedGame" (bookAddedEvent)="refreshData()"></app-games>
+    <app-view-game *ngIf="action === 'view'" [game]="selectedGame" (userDeletedEvent)="refreshData()"></app-view-game>
+  </div>
+  </div>
+
+

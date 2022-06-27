@@ -44,6 +44,14 @@ public class ProductDAO {
 			HibernateUtil.closeSession(); //This closes the session
 			return userList; //This returns the list
 		}
+		public static List<Product> getAllGames(){
+			Session ses = HibernateUtil.getSession(); //This opens the session
+			List<Product> userList = ses.createQuery("FROM Product WHERE product = '1'").list(); //This is HQL which will get all items from the user Table
+			HibernateUtil.closeSession(); //This closes the session
+			return userList; //This returns the list
+		}
+		
+
 		
 		public static Product getProductById(int id) {
 			Session ses = HibernateUtil.getSession(); //opens the session

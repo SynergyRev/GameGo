@@ -14,6 +14,7 @@ import { GamesComponent } from './admin/games/games.component';
 import { ProductsComponent } from './admin/products/products.component';
 import { LoginComponent } from './admin/login/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewGameComponent } from './view-game/view-game.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ViewuserComponent,
     ProductsComponent,
     GamesComponent,
-    LoginComponent
+    LoginComponent,
+    ViewGameComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([
       { path: 'admin/users', component: UsersComponent },
   { path: 'admin/games', component: GamesComponent },
-  {path:'admin/login', component: LoginComponent}
+  {path:'admin/login/login', component: LoginComponent},
+  { path: 'admin/view-game', component: ViewGameComponent },
 
 
     ]),

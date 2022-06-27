@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -47,7 +49,7 @@ public class ProductController {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(product);
 		}	
 	}
-	@PostMapping(" ")
+	@PostMapping("/insertProductGames")
 	public static ResponseEntity<Product> insertProductGames(@RequestBody Product product){
 		System.out.println(product.getId());
 		
@@ -66,5 +68,11 @@ public class ProductController {
 		 ResponseEntity.status(HttpStatus.CREATED).body(p);
 		 return ResponseEntity.status(200).body(p);
 	}
+	@GetMapping("/getAllGames")
+	public ResponseEntity<List<Product>> getAllGames(){
+		List<Product> products = ProductServices.getAllGames();
+		 ResponseEntity.status(HttpStatus.CREATED).body(products);
+		 return ResponseEntity.status(200).body(products);
+}
 }
 

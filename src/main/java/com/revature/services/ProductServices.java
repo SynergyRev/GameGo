@@ -25,7 +25,9 @@ public class ProductServices {
 //	}
 	
 	
-
+	 public static List<Product> getAllGames(){
+			return ProductDAO.getAllGames();
+		}
 
 
 public static List<Product> getAllProducts(){

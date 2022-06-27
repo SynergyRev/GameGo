@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -31,14 +32,14 @@ public class UserController {
 		 ResponseEntity.status(HttpStatus.CREATED).body(users);
 		 return ResponseEntity.status(200).body(users);
 }
-	@GetMapping("/getuserbyid")
+	@PostMapping("/getuserbyid")
 	public ResponseEntity<Users> getUserByID(@RequestBody int id){
 		Users u = new Users();
 		u = UserServices.getUserById(id);
 		 ResponseEntity.status(HttpStatus.CREATED).body(u);
 		 return ResponseEntity.status(200).body(u);
 }
-	@GetMapping("/getuserbyusername")
+	@PostMapping("/getuserbyusername")
 	public ResponseEntity<Users> getUserByUsername(@RequestBody Users username){
 		Users u = new Users();
 		u = UserServices.getByUsersName(username.getUserName());

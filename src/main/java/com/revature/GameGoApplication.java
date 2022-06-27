@@ -1,5 +1,7 @@
 package com.revature;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -42,7 +44,22 @@ public class GameGoApplication {
 //		}
 		SpringApplication.run(GameGoApplication.class, args);
 		System.out.println("Hello");
+//		
+//		String number = "2";
+//		int num = Integer.parseInt(number);
+//		System.out.println(num);
 		
+//		int[] number =  {1, 2, 4, 5, 6};
+//		
+//		for(int i =0; i<number.length; i++) {
+//			String temp = Arrays.toString(number);
+//			System.out.println(temp);
+//		ArrayList<String> b = new ArrayList<String>();
+//		b.add(temp);
+//		b.add("ALY");
+//		System.out.println(b);
+			
+//		}
 		
 //		
 //	UserDAO ud = new UserDAO();

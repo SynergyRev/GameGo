@@ -20,7 +20,9 @@ import com.revature.services.AuthenticationServices;
 @RequestMapping(value="/authcontroller")
 @CrossOrigin
 public class AuthController {
+	@Autowired
 	private AuthenticationServices as;
+	public static Users u;
 	
 	@Autowired
 	public AuthController(AuthenticationServices service) {
@@ -40,16 +42,17 @@ public class AuthController {
 		
 	}
 	
-	@GetMapping("/login")
-	public ResponseEntity<Users> login(@RequestBody Users user){
+	@PostMapping("/login")
+	public ResponseEntity<String>login(@RequestBody Users user){
 		if (user.getUserName() == null) {
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(user);
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body("0");
 		}
 		else if(as.login(user.getUserName(), user.getPassword())!= null)  {
 			user = as.login(user.getUserName(), user.getPassword());
 			
+			
 		
-			return ResponseEntity.status(HttpStatus.CREATED).body(user);
+			return ResponseEntity.status(HttpStatus.CREATED).body("1");
 		}else {
 		return null;
 	}

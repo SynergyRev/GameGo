@@ -16,6 +16,7 @@ import { LoginComponent } from './admin/login/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ViewGameComponent } from './view-game/view-game.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ViewGameComponent } from './view-game/view-game.component';
     ProductsComponent,
     GamesComponent,
     LoginComponent,
-    ViewGameComponent
+    ViewGameComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { ViewGameComponent } from './view-game/view-game.component';
   { path: 'admin/games', component: GamesComponent },
   {path:'admin/login/login', component: LoginComponent},
   { path: 'admin/view-game', component: ViewGameComponent },
+  
 
 
     ]),

@@ -1,5 +1,5 @@
 <h1>Games Admin</h1>
-<a class="btn btn-primary mb-3" (click)="addGame()">Add New Game</a>
+<a class="btn btn-primary mb-3" (click)="checkout()">Checkout</a>
 <div class="container row">
   <div class="col-md-6">
     <table class="table">
@@ -21,15 +21,15 @@
           <td>{{game.Description}}</td>
           <td>{{game.price}}</td>
           <td>
-            <button type="button" class="btn btn-primary">Show Details</button>
+            <button (click)="something()" type="button"  class="btn btn-primary">ADD TO CART</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
-    <app-games *ngIf="action === 'add'" [game]="selectedGame" (bookAddedEvent)="refreshData()"></app-games>
-    <app-view-game *ngIf="action === 'view'" [game]="selectedGame" (userDeletedEvent)="refreshData()"></app-view-game>
+    <app-games *ngIf="action === 'add'" [product]="selectedGame" (gameAddedEvent)="refreshData()"></app-games>
+    <app-view-game *ngIf="action === 'view'" [game]="selectedGame" (gameDeletedEvent)="refreshData()"></app-view-game>
   </div>
   </div>
 

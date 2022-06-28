@@ -1,3 +1,4 @@
+
 import { ViewGameComponent } from './view-game/view-game.component';
 import { LoginComponent } from './admin/login/login/login.component';
 import { NgModule, Component } from '@angular/core';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'admin/games', component: GamesComponent },
   {path:'admin/login/login', component: LoginComponent},
   { path: 'admin/view-game', component: ViewGameComponent },
+  
 
 ];
 

@@ -1,8 +1,7 @@
 
-
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Game } from 'src/app/model/Game';
+import { Product } from 'src/app/model/Product';
 import { HttpClientService } from 'src/app/service/http-client.service';
 
 @Component({
@@ -12,10 +11,10 @@ import { HttpClientService } from 'src/app/service/http-client.service';
 })
 export class GamesComponent implements OnInit {
   @Input()
-  game!: Game;
+  product!: Product;
 
   @Output()
-  userAddedEvent = new EventEmitter();
+  gameAddedEvent = new EventEmitter();
   
   message!: string;
   password!: string;
@@ -28,9 +27,9 @@ export class GamesComponent implements OnInit {
     
   }
   addGame() {
-    this.httpClientService.addGame(this.game).subscribe(
-      (user) => {
-        this.userAddedEvent.emit();
+    this.httpClientService.addGame(this.product).subscribe(
+      (game) => {
+        this.gameAddedEvent.emit();
         this.router.navigate(['admin', 'games']);
       }
     );

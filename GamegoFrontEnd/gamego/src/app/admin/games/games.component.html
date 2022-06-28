@@ -2,17 +2,17 @@
 <form #recievedUser="ngForm">
 
   <label for="name">Product</label>
-  <input type="text" class="form-control" id="product" placeholder="game" [(ngModel)]="game.product" name="firstName">
+  <input type="text" class="form-control" id="product" placeholder="game" [(ngModel)]="product.product" name="firstName">
   
   <label for="name">Game Name</label>
-  <input type="text" class="form-control" id="gNmae" placeholder="Game Name" [(ngModel)]="game.gName" name="lastName">
+  <input type="text" class="form-control" id="gNmae" placeholder="Game Name" [(ngModel)]="product.gName" name="lastName">
   
 
   <label for="type">Description</label>
-  <input type="text" class="form-control" id="type" placeholder="type name" [(ngModel)]="game.Description" name="name">
+  <input type="text" class="form-control" id="type" placeholder="type name" [(ngModel)]="product.Description" name="name">
 
   <label for="password">Price</label>
-  <input type="text" class="form-control" id="price" placeholder="password" [(ngModel)]="game.price" name="password">
+  <input type="text" class="form-control" id="price" placeholder="password" [(ngModel)]="product.price" name="password">
 
   
    <br>
@@ -50,6 +50,6 @@
     </table>
   </div>
   <div class="col-md-6">
-    <app-games *ngIf="action === 'add'" [game]="selectedGame" (bookAddedEvent)="loadData()"></app-games>
+    <app-games *ngIf="action === 'add'" [game]="selectedGame" (gameAddedEvent)="loadData()"></app-games>
   </div>
 </div>-->

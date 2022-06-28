@@ -1,4 +1,4 @@
-export class Game {
+export class Product {
     id!: number;
     product!: string;
     gName!: string;
